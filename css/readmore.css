@@ -1,0 +1,17 @@
+.book img{
+  width:500px;
+  height:500px;
+}
+.center {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.context{
+  text-align: top;
+  margin-top:25%;
+}
+.context p{
+  line-height: 30px;
+}

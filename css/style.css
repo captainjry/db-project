@@ -1,0 +1,90 @@
+/* Add a black background color to the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #e9e9e9;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the "active" element to highlight the current page */
+.topnav a.active {
+  background-color: #2196F3;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.topnav input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 50px;
+  font-size: 17px;
+}
+.main-content{
+  margin-top: 30px;
+}
+.meta{
+  text-align: center;
+  margin:0;
+}
+.actionlist li{
+  list-style: none;
+  display:inline-block;
+}
+.meta .actionlist a{
+  background:black;
+}
+.actionlist li a{
+  color:white;
+  font-size: 12px;
+  font-family:"Lato", font-nevis, font-droidsans-bold;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  line-height: normal;
+  padding:5px 0;
+  width:70px;
+}
+.main-content img{
+  max-width: 100%;
+  max-height: 100%;
+}
+.topic{
+  text-align: center;
+}
+.topic h2{
+  font-weight:800;
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom:20px;
+}
+.topic h2:after{
+  content:"";
+  width: 100px;
+  height:5px;
+  background:#e9e9e9;
+  display: block;
+  margin-top:20px;
+  border-radius:3px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.bg{
+
+}
