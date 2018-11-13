@@ -91,10 +91,12 @@
   color: white;
   background-color: darkgrey;
 }
-#overwriteBox{
-  margin: 5% 0 0 0;
+
+.my-footer {
   width: 100%;
+  padding: 2em 0 2em 0;
   background-color:#003a70;
+  margin-top: 5%;
 }
 #text-white{
   color: whitesmoke;
