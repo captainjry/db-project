@@ -1,4 +1,4 @@
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+@import url("https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{
     background: #003a70;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #e9e9e9, #003a70);  /* Chrome 10-25, Safari 5.1-6 */

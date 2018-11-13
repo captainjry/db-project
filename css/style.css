@@ -23,12 +23,12 @@
 
 /* Style the "active" element to highlight the current page */
 .topnav a.active {
-  background-color: #2196F3;
+  background-color: #2196f3;
   color: white;
 }
 
 /* Style the search box inside the navigation bar */
-.topnav input[type=text] {
+.topnav input[type="text"] {
   float: right;
   padding: 6px;
   border: none;
@@ -36,55 +36,70 @@
   margin-right: 50px;
   font-size: 17px;
 }
-.main-content{
+.main-content {
   margin-top: 30px;
 }
-.meta{
+.meta {
   text-align: center;
-  margin:0;
+  margin: 0;
 }
-.actionlist li{
+.actionlist li {
   list-style: none;
-  display:inline-block;
+  display: inline-block;
 }
-.meta .actionlist a{
-  background:black;
+.meta .actionlist a {
+  background: black;
 }
-.actionlist li a{
-  color:white;
+.actionlist li a {
+  color: white;
   font-size: 12px;
-  font-family:"Lato", font-nevis, font-droidsans-bold;
+  font-family: "Lato", font-nevis, font-droidsans-bold;
   font-weight: bold;
   text-align: center;
   display: inline-block;
   line-height: normal;
-  padding:5px 0;
-  width:70px;
+  padding: 5px 0;
+  width: 70px;
 }
-.main-content img{
+.main-content img {
   max-width: 100%;
   max-height: 100%;
 }
-.topic{
+.topic {
   text-align: center;
 }
-.topic h2{
-  font-weight:800;
+.topic h2 {
+  font-weight: 800;
   font-size: 50px;
   margin-top: 20px;
-  margin-bottom:20px;
+  margin-bottom: 20px;
 }
-.topic h2:after{
-  content:"";
+.topic h2:after {
+  content: "";
   width: 100px;
-  height:5px;
-  background:#e9e9e9;
+  height: 5px;
+  background: #e9e9e9;
   display: block;
-  margin-top:20px;
-  border-radius:3px;
-  margin-left:auto;
-  margin-right:auto;
+  margin-top: 20px;
+  border-radius: 3px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.bg{
-
+.bg {
+}
+.actionlist a:hover {
+  color: white;
+  background-color: darkgrey;
+}
+#overwriteBox{
+  margin: 5% 0 0 0;
+  width: 100%;
+  background-color:#003a70;
+}
+#text-white{
+  color: whitesmoke;
+  line-height:10px;
+}
+footer h5{
+  color:gray;
 }
