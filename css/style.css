@@ -1,3 +1,16 @@
+/*Add bg color top nav*/
+#nav1{
+  background-color: #003a70;
+}
+li.nav-item a.nav-link{
+  color: whitesmoke;
+}
+#logo{
+  margin:auto;
+  padding-left:10%;
+  width:30%;
+  height:30%;
+}
 /* Add a black background color to the top navigation bar */
 .topnav {
   overflow: hidden;
@@ -41,7 +54,10 @@
 }
 .meta {
   text-align: center;
-  margin: 0;
+  margin: auto;
+}
+ul.actionlist {
+  padding-left: 5%;
 }
 .actionlist li {
   list-style: none;
@@ -60,6 +76,7 @@
   line-height: normal;
   padding: 5px 0;
   width: 70px;
+  text-decoration: none;
 }
 .main-content img {
   max-width: 100%;
@@ -73,6 +90,7 @@
   font-size: 50px;
   margin-top: 20px;
   margin-bottom: 20px;
+  color: #003a70;
 }
 .topic h2:after {
   content: "";
@@ -85,23 +103,21 @@
   margin-left: auto;
   margin-right: auto;
 }
-.bg {
-}
 .actionlist a:hover {
-  color: white;
+  color: antiquewhite;
   background-color: darkgrey;
 }
 
 .my-footer {
   width: 100%;
   padding: 2em 0 2em 0;
-  background-color:#003a70;
+  background-color: #003a70;
   margin-top: 5%;
 }
-#text-white{
+#text-white {
   color: whitesmoke;
-  line-height:10px;
+  line-height: 10px;
 }
-footer h5{
-  color:gray;
+footer h5 {
+  color: gray;
 }
