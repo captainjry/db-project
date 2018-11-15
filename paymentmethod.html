@@ -1,16 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
   <!-- Required meta tags -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous" />
-  <link rel="stylesheet" href="css/style.css" />
-  <title>Bookstore</title>
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pm.css">
+
+  <title>About</title>
 </head>
 
 <body>
@@ -83,149 +85,88 @@
       </div>
     </div>
   </div>
-  <div class="bg">
-    <div class="topic">
-      <img src="img/logo.png" alt="logo" class="logoBig">
-      <h2>Bookstore</h2>
+  <div class="topic">
+    <h2>Address Confirmation
+    </h2>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg">
+        <form>
+          <div class="form-row">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          </div>
+          <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="inputCity">City</label>
+              <input type="text" class="form-control" id="inputCity">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="inputState">State</label>
+              <select id="inputState" class="form-control">
+                <option selected>Choose...</option>
+                <option>...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-2">
+              <label for="inputZip">Zip</label>
+              <input type="text" class="form-control" id="inputZip">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck">
+                Check me out
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-    <div class="main-content">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/1.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li>
-                  <a href="book1.html">Read more</a>
-                  <a href="cart.html">Buy</a>
-                </li>
-              </ul>
+    <div class="row">
+      <div class="col-lg">
+        <div class="paymentCont">
+          <div class="headingWrap">
+            <h3 class="headingTop text-center">Select Your Payment Method</h3>
+          </div>
+          <div class="paymentWrap">
+            <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
+              <label class="btn paymentMethod active">
+                <div class="method cash"></div>
+                <input type="radio" name="options" value="cash" id="pcash">
+              </label>
+              <label class="btn paymentMethod">
+                <div class="method master-card"></div>
+                <input type="radio" name="options" value="mc" id="mastercard">
+              </label>
+              <label class="btn paymentMethod">
+                <div class="method visa"></div>
+                <input type="radio" name="options" value="visa" id="pvisa">
+              </label>
+              <label class="btn paymentMethod">
+                <div class="method paypal"></div>
+                <input type="radio" name="options" value="pp" id="ppaypal">
+              </label>
+              <label class="btn paymentMethod">
+                <div class="method skrill"></div>
+                <input type="radio" name="options" value="sk" id="pskrill">
+              </label>
             </div>
           </div>
-          <div class="col-sm">
-            <img src="img/2.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li>
-                  <a href="book2.html">Read more</a>
-                  <a href="cart.html">Buy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/3.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li>
-                  <a href="book3.html">Read more</a>
-                  <a href="cart.html">Buy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/4.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/5.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/6.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/7.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/8.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/9.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/10.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/11.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/12.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
+          <div class="footerNavWrap clearfix">
+            <a role="button" href="index.html" class="btn btn-secondary left">Continue Shopping</a>
+            <input id="SubmitButton" type="submit" value="Checkout" class="btn btn-success right">
           </div>
         </div>
       </div>
-    </div>
-    <br /><br />
-    <div class="page">
-      <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-          <li class="page-item disabled">
-            <a class="page-link" href="#" tabindex="-1">Previous</a>
-          </li>
-          <li class="page-item disabled">
-            <a class="page-link" href="#">1</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="page2.html">2</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="page3.html">3</a>
-          </li>
-          <li class="page-item">
-            <a class="page-link" href="page2.html">Next</a>
-          </li>
-        </ul>
-      </nav>
     </div>
   </div>
   <footer class="my-footer">
@@ -267,8 +208,11 @@
       </div>
     </div>
   </footer>
+
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

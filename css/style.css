@@ -1,23 +1,28 @@
 /*Add bg color top nav*/
-#nav1{
+#nav1 {
   background-color: #003a70;
 }
-li.nav-item a.nav-link{
+
+li.nav-item a.nav-link {
   color: whitesmoke;
 }
-#logo{
-  margin:auto;
-  padding-left:10%;
-  width:30%;
-  height:30%;
-}
-#logologin{
-  margin-left: 35%;
-  width:25%;
-  height:25%;
+
+#logo {
+  margin: auto;
+  padding-left: 10%;
+  width: 30%;
+  height: 30%;
 }
 
-.note{
+#logologin {
+  margin-left: 35%;
+  width: 25%;
+  height: 25%;
+}
+.logoBig{
+  margin:2% auto auto auto;
+}
+.note {
   text-align: right;
 }
 /* Add a black background color to the top navigation bar */
@@ -58,23 +63,29 @@ li.nav-item a.nav-link{
   margin-right: 50px;
   font-size: 17px;
 }
+
 .main-content {
   margin-top: 30px;
 }
+
 .meta {
   text-align: center;
   margin: auto;
 }
+
 ul.actionlist {
   padding-left: 5%;
 }
+
 .actionlist li {
   list-style: none;
   display: inline-block;
 }
+
 .meta .actionlist a {
   background: black;
 }
+
 .actionlist li a {
   color: white;
   font-size: 12px;
@@ -87,13 +98,16 @@ ul.actionlist {
   width: 70px;
   text-decoration: none;
 }
+
 .main-content img {
   max-width: 100%;
   max-height: 100%;
 }
+
 .topic {
   text-align: center;
 }
+
 .topic h2 {
   font-weight: 800;
   font-size: 50px;
@@ -101,6 +115,7 @@ ul.actionlist {
   margin-bottom: 20px;
   color: #003a70;
 }
+
 .topic h2:after {
   content: "";
   width: 100px;
@@ -112,6 +127,7 @@ ul.actionlist {
   margin-left: auto;
   margin-right: auto;
 }
+
 .actionlist a:hover {
   color: antiquewhite;
   background-color: darkgrey;
@@ -123,10 +139,23 @@ ul.actionlist {
   background-color: #003a70;
   margin-top: 5%;
 }
+
 #text-white {
   color: whitesmoke;
   line-height: 10px;
 }
+
 footer h5 {
   color: gray;
+}
+
+.wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.center{
+  margin: auto;
+}
+.creditlogo{
+  margin-bottom: 8%;
 }
