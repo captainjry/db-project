@@ -11,6 +11,15 @@ li.nav-item a.nav-link{
   width:30%;
   height:30%;
 }
+#logologin{
+  margin-left: 35%;
+  width:25%;
+  height:25%;
+}
+
+.note{
+  text-align: right;
+}
 /* Add a black background color to the top navigation bar */
 .topnav {
   overflow: hidden;

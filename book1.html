@@ -17,83 +17,88 @@
 </head>
 
 <body>
-  <div class="header">
-    <nav class="navbar navbar-expand-lg" id="nav1">
-      <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" id="logo"></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse justify-content-end" id="navbarsExample08">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Log in</a>
-          </li>
-          <!-- Modal -->
-          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarsExample08">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="signup.html">Sign up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Log in</a>
+      </li>
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <img src="img/logo.png" alt="logo" id="logologin">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Username</label>
+                  <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Username">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone
+                    else.</small>
                 </div>
-                <div class="modal-body">
-                  ...
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                 </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Save changes</button>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Remember me</label>
+                  <small id="emailHelp" class="form-text text-muted note">if you didn't sign up click here <a href="signup.html">Sign
+                      up</a></small>
                 </div>
-              </div>
+              </form>
+            </div>
+            <div class="modal-footer justify-content-center">
+              <button type="button" class="btn btn-primary">Login</button>
             </div>
           </div>
-          <li class="nav-item">
-            <a class="nav-link " href="cart.html">Cart</a>
-          </li>
-        </ul>
+        </div>
       </div>
-    </nav>
-    <div class="second-bar">
-      <div class="topnav">
-        <a class="active" href="#home">Home</a> <a href="#about">About</a>
-        <a href="#">Promotion</a>
-        <a href="#contact">Author</a> <a href="#contact">Contact</a>
-        <input type="text" placeholder="Search.." />
-      </div>
+      <li class="nav-item">
+        <a class="nav-link " href="cart.html">Cart</a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <div class="second-bar">
+    <div class="topnav">
+      <a class="active" href="#home">Home</a> <a href="#about">About</a>
+      <a href="#">Promotion</a>
+      <a href="#contact">Author</a> <a href="#contact">Contact</a>
+      <input type="text" placeholder="Search.." />
     </div>
   </div>
+  </div>
   <div class="container">
-    <div class="row">
-      <div class="book">
-        <div class="col-sm-6 center">
-          <img src="img/1.jpg" alt="books">
+    <div class="box">
+      <div class="row">
+        <div class="book">
+          <div class="col-sm-6">
+            <img src="img/1.jpg" alt="books">
+          </div>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="context">
-          <b>
-            <h2>ย่องเบาเข้าญี่ปุ่น</h2>
-          </b> <br>
-          <h1>โตมร ศุขปรีชา</h1><br>
-          <p>
-            สารคดีกึ่งนิยายของ ‘โตมร ศุขปรีชา’ ว่าด้วยการเดินทางเพื่อเข้าถึงจิตวิญญาณภายในและวิธีคิดของคนญี่ปุ่น
-            ผ่านการเก็บข้อมูลจากคำบอกเล่าของบุคคล บันทึกประวัติศาสตร์ และศิลปะวัฒนธรรม
-          </p>
-        </div>
-        <h1>285.-</h1>
-        <div class="meta">
-          <ul class="actionlist">
-            <li>
-              <a href="cart.html">Add to cart</a>
-            </li>
-          </ul>
+        <div class="col-sm-6">
+          <div class="context">
+            <b>
+              <h2>ย่องเบาเข้าญี่ปุ่น</h2>
+            </b><br>
+            <h1>โตมร ศุขปรีชา</h1><br>
+            <p>
+              สารคดีกึ่งนิยายของ ‘โตมร ศุขปรีชา’ ว่าด้วยการเดินทางเพื่อเข้าถึงจิตวิญญาณภายในและวิธีคิดของคนญี่ปุ่น
+              ผ่านการเก็บข้อมูลจากคำบอกเล่าของบุคคล บันทึกประวัติศาสตร์ และศิลปะวัฒนธรรม
+            </p>
+          </div>
+          <h1>285.-</h1>
+          <button type="button" class="btn btn-dark cartbtn">Add to cart</button>
         </div>
       </div>
     </div>
