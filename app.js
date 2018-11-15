@@ -7,11 +7,11 @@ var pCash = document.getElementById("pcash"),
 
 submitButton.addEventListener("click", function () {
   if (pCash.checked) {
-    window.location = "index.html";
+    window.location = "index.php";
   } else if (masterCard.checked) {
-    window.location = "payment.html";
+    window.location = "payment.php";
   } else if (pVisa.checked) {
-    window.location = "payment.html";
+    window.location = "payment.php";
   }
   else if (pPaypal.checked) {
     window.location = "https://www.paypal.com/th/signin";
