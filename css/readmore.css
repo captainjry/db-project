@@ -1,5 +1,5 @@
 .box{
-  box-shadow:15px 15px 5px 0px;
+  box-shadow:15px 15px 5px 0 rgba(0, 0,0, 0.6);
   padding:15px;
 }
 .book img{
