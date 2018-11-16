@@ -17,7 +17,7 @@
 <body>
   <div class="header">
     <nav class="navbar navbar-expand-lg" id="nav1">
-      <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo" id="logo"></a>
+      <a class="navbar-brand" href="index.php"><img src="img/logo.png" alt="logo" id="logo"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08" aria-controls="navbarsExample08"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -26,7 +26,7 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarsExample08">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="signup.html">Sign up</a>
+            <a class="nav-link" href="signup.php">Sign up</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModalCenter">Log in</a>
@@ -58,7 +58,7 @@
                     <div class="form-check">
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Remember me</label>
-                      <small id="emailHelp" class="form-text text-muted note">if you didn't sign up click here <a href="signup.html">Sign
+                      <small id="emailHelp" class="form-text text-muted note">if you didn't sign up click here <a href="signup.php">Sign
                           up</a></small>
                     </div>
                   </form>
@@ -70,7 +70,7 @@
             </div>
           </div>
           <li class="nav-item">
-            <a class="nav-link " href="cart.html">Cart</a>
+            <a class="nav-link " href="cart.php">Cart</a>
           </li>
         </ul>
       </div>
@@ -220,13 +220,13 @@
     <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item">
-          <a class="page-link" href="index.html" tabindex="-1">Previous</a>
+          <a class="page-link" href="index.php" tabindex="-1">Previous</a>
         </li>
-        <li class="page-item"><a class="page-link" href="index.html">1</a></li>
+        <li class="page-item"><a class="page-link" href="index.php">1</a></li>
         <li class="page-item disabled"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="page3.html">3</a></li>
+        <li class="page-item"><a class="page-link" href="page3.php">3</a></li>
         <li class="page-item">
-          <a class="page-link" href="page3.html">Next</a>
+          <a class="page-link" href="page3.php">Next</a>
         </li>
       </ul>
     </nav>
