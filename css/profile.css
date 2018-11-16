@@ -1,0 +1,15 @@
+.box{
+  box-shadow:15px 15px 5px 0 rgba(0, 0,0, 0.6);
+  padding:15px;
+  width:100%;
+}
+.profileimg{
+  width: 200px;
+  height:200px;
+}
+.space{
+  margin:0.8%;
+}
+.uploadf{
+  padding-left: 40%;
+}
