@@ -12,7 +12,6 @@
   <link rel="stylesheet" href="css/style.css" />
   <title>Bookstore</title>
 </head>
-
 <body>
   <div class="header">
     <nav class="navbar navbar-expand-lg" id="nav1">
@@ -90,119 +89,36 @@
     </div>
     <div class="main-content">
       <div class="container">
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/1.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
+      <?php
+				require('connect.php');
+				$q = "select img_url,ISBN from book";
+				$result = $mysqli->query($q);
+				if(!$result){
+					echo "Select failed: ".$mysqli->error;
+        }
+        $count=0;
+        while($book = $result->fetch_array()){
+          $img_url = $book["img_url"];
+          $id= $book["ISBN"];
+          if($count % 3==0){
+            echo '<div class="row">';
+          }
+          echo ("
+            <div class='col-sm'>
+              <img src='$img_url' />
+              <div class='meta'>
+                <ul class='actionlist'>
                 <li>
-                  <a href="book1.php">Read more</a>
-                  <a href="cart.php">Buy</a>
+                  <a href='book.php?id=$id'>Read more</a>
+                  <a href='cart.php'>Buy</a>
                 </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/2.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li>
-                  <a href="book2.php">Read more</a>
-                  <a href="cart.php">Buy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/3.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li>
-                  <a href="book3.php">Read more</a>
-                  <a href="cart.php">Buy</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/4.png" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/5.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/6.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/7.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/8.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/9.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm">
-            <img src="img/10.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/11.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm">
-            <img src="img/12.jpg" />
-            <div class="meta">
-              <ul class="actionlist">
-                <li><a href="">Read more</a> <a href="">Buy</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+                </ul>
+              </div>
+            </div>");
+            if($count %3==2){
+             echo '</div>';
+            }
+        $count++;}?>
       </div>
     </div>
     <br /><br />

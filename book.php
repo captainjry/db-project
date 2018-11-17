@@ -111,6 +111,14 @@
       </div>
     </div>
   </div>
+  <?php
+    
+    $queries = array();
+    parse_str($_SERVER['QUERY_STRING'], $queries);
+    echo($queries['id']);
+    $id = $queries['id']
+    $q = "select * from book where id = $id"
+  ?>
   <footer class="my-footer">
     <div class="container">
       <div class="row">
