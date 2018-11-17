@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 17, 2018 at 08:58 PM
+-- Generation Time: Nov 17, 2018 at 09:05 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `author`
 --
 
+DROP TABLE IF EXISTS `author`;
 CREATE TABLE `author` (
   `author_id` int(11) NOT NULL,
   `author_name` varchar(80) CHARACTER SET utf8 DEFAULT NULL,
@@ -40,6 +41,7 @@ CREATE TABLE `author` (
 -- Table structure for table `book`
 --
 
+DROP TABLE IF EXISTS `book`;
 CREATE TABLE `book` (
   `ISBN` int(11) NOT NULL,
   `author_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
@@ -66,6 +68,7 @@ INSERT INTO `book` (`ISBN`, `author_name`, `publisher_name`, `book_info`, `title
 -- Table structure for table `cart`
 --
 
+DROP TABLE IF EXISTS `cart`;
 CREATE TABLE `cart` (
   `cart_id` int(11) NOT NULL,
   `customer_id` varchar(255) DEFAULT NULL
@@ -77,6 +80,7 @@ CREATE TABLE `cart` (
 -- Table structure for table `customer`
 --
 
+DROP TABLE IF EXISTS `customer`;
 CREATE TABLE `customer` (
   `customer_id` int(11) NOT NULL,
   `customer_password` int(11) NOT NULL,
@@ -93,6 +97,7 @@ CREATE TABLE `customer` (
 -- Table structure for table `order`
 --
 
+DROP TABLE IF EXISTS `order`;
 CREATE TABLE `order` (
   `order_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -107,6 +112,7 @@ CREATE TABLE `order` (
 -- Table structure for table `payment`
 --
 
+DROP TABLE IF EXISTS `payment`;
 CREATE TABLE `payment` (
   `payment_id` int(11) NOT NULL,
   `customer_id` int(11) NOT NULL,
@@ -121,6 +127,7 @@ CREATE TABLE `payment` (
 -- Table structure for table `publisher`
 --
 
+DROP TABLE IF EXISTS `publisher`;
 CREATE TABLE `publisher` (
   `publisher_id` int(11) NOT NULL,
   `publisher_name` varchar(255) DEFAULT NULL,
@@ -135,6 +142,7 @@ CREATE TABLE `publisher` (
 -- Table structure for table `staff`
 --
 
+DROP TABLE IF EXISTS `staff`;
 CREATE TABLE `staff` (
   `staff_id` int(11) NOT NULL,
   `staff_Fname` varchar(255) DEFAULT NULL,
