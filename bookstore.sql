@@ -2,8 +2,8 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Nov 17, 2018 at 02:17 PM
+-- Host: localhost
+-- Generation Time: Nov 17, 2018 at 08:58 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -42,12 +42,23 @@ CREATE TABLE `author` (
 
 CREATE TABLE `book` (
   `ISBN` int(11) NOT NULL,
-  `author_name` varchar(255) DEFAULT NULL,
-  `publisher_name` varchar(255) DEFAULT NULL,
-  `title` varchar(255) DEFAULT NULL,
+  `author_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `publisher_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `book_info` varchar(1000) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `year` int(11) DEFAULT NULL,
-  `price` double DEFAULT NULL
+  `price` double DEFAULT NULL,
+  `img_url` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `book`
+--
+
+INSERT INTO `book` (`ISBN`, `author_name`, `publisher_name`, `book_info`, `title`, `year`, `price`, `img_url`) VALUES
+(1, 'โตมร ศุขปรีชา\r\n\r\n', 'สำนักพิมพ์แซลมอน\r\n', 'สารคดีกึ่งนิยายของ ‘โตมร ศุขปรีชา’ ว่าด้วยการเดินทางเพื่อเข้าถึงจิตวิญญาณภายในและวิธีคิดของคนญี่ปุ่น ผ่านการเก็บข้อมูลจากคำบอกเล่าของบุคคล บันทึกประวัติศาสตร์ และศิลปะวัฒนธรรม\r\n', 'ย่องเบาเข้าญี่ปุ่น', 2008, 285, 'img/1.jpg'),
+(3, 'ธนชาติ ศิริภัทราชัย\r\n', 'สำนักพิมพ์แซลมอน', '‘NEW YORK 1st TIME นิวยอร์กตอนแรกๆ...’ หนังสือเล่มแรกของ เบ๊น—ธนชาติ ศิริภัทราชัย ผู้ช่วยผู้กำกับภาพยนตร์เรื่อง ลุงบุญมีระลึกชาติ ที่จับเครื่องบินไปเรียนถ่ายภาพในนครนิวยอร์ก และแคปเจอร์เหตุการณ์ครั้งแรกในชีวิตมาร่วมแชร์ อย่างเหตุการณ์โดนปล้นครั้งแรก มีแฟนเป็นชาวต่างชาติครั้งแรก และความอดทนแปลกๆ กับครั้งแรกที่ต้องยืนต่อแถวนานกว่าแปดชั่วโมง\r\n\r\n', 'NEW YORK 1ST TIME นิวยอร์กตอนแรกๆ...\r\n', 2008, 243, 'img/2.png'),
+(4, 'ธนชาติ ศิริภัทราชัย', 'สำนักพิมพ์แซลมอน', 'เมื่อนิวยอร์กร้อนเป็นไฟ ธนชาติ ศิริภัทราชัย จึงจับเครื่องบินมุ่งตรงสู่อลาสก้า ดินแดนที่ขึ้นชื่อว่าหนาวสุดขีด (แต่ดันไปตอนฤดูร้อน...) เพื่อไปพักชมวิวที่ไม่มีทางพบเห็นในเมืองหลวง ทั้งเดินเข้าป่าที่ทรหด ล่องเรือไปเพลินวาฬ พูดคุยกับ ‘กลุ่มคน’ ที่ต่างก็มีเหตุผลว่าทำไมอลาสก้าถึงน่าอยู่และทำไมเมืองนี้ถึงมา ‘ครั้งเดียว’ แล้วไม่เคยพอ', 'THE REAL ALASKA อลาสก้าล้านเปอร์เซ็นต์', 2008, 243, 'img/3.png');
 
 -- --------------------------------------------------------
 
@@ -195,13 +206,13 @@ ALTER TABLE `staff`
 -- AUTO_INCREMENT for table `author`
 --
 ALTER TABLE `author`
-  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `author_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `book`
 --
 ALTER TABLE `book`
-  MODIFY `ISBN` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ISBN` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cart`
@@ -213,19 +224,19 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5923;
+  MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `payment`
 --
 ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `publisher`
