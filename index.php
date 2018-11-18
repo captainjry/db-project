@@ -118,7 +118,13 @@
             if($count %3==2){
              echo '</div>';
             }
-        $count++;}?>
+          if($count!=11){
+            $count++;
+          }
+          else{
+            break;
+          }
+           }?>
       </div>
     </div>
     <br /><br />
