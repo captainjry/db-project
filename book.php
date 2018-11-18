@@ -86,31 +86,41 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="box">
-      <div class="row">
-        <div class="book">
-          <div class="col-sm-6">
-            <img src="img/1.jpg" alt="books">
+  <?php 
+    require_once('connect.php');
+    $q = "select * from book where ISBN = ".$_GET['id']."";
+    $result = $mysqli->query($q);
+    if(!$result) {
+      echo "Select failed: ".$mysqli->error;
+    }
+    $book = $result->fetch_array();
+    echo ('
+      <div class="container">
+        <div class="box">
+            <div class="row">
+              <div class="book">
+                <div class="col-sm-6">
+                  <img src='.$book["img_url"].' alt="books">
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="context">
+                <b>
+                  <h2>'.$book["title"].'</h2>
+                </b><br>
+                <h1>'.$book["author_name"].'</h1><br>
+                <p>
+                  '.$book["book_info"].'
+                </p>
+              </div>
+              <h1>'.$book['price'].'.-</h1>
+              <button type="button" class="btn btn-dark cartbtn">Add to cart</button>
+            </div>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="context">
-            <b>
-              <h2>ย่องเบาเข้าญี่ปุ่น</h2>
-            </b><br>
-            <h1>โตมร ศุขปรีชา</h1><br>
-            <p>
-              สารคดีกึ่งนิยายของ ‘โตมร ศุขปรีชา’ ว่าด้วยการเดินทางเพื่อเข้าถึงจิตวิญญาณภายในและวิธีคิดของคนญี่ปุ่น
-              ผ่านการเก็บข้อมูลจากคำบอกเล่าของบุคคล บันทึกประวัติศาสตร์ และศิลปะวัฒนธรรม
-            </p>
-          </div>
-          <h1>285.-</h1>
-          <button type="button" class="btn btn-dark cartbtn">Add to cart</button>
-        </div>
-      </div>
-    </div>
-  </div>
+      </div>');
+  ?>
+
   <footer class="my-footer">
     <div class="container">
       <div class="row">
