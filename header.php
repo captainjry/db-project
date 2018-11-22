@@ -69,7 +69,7 @@
             </div>
           </div>
           <li class="nav-item">
-            <a class="nav-link " href="cart.php">Cart</a>
+            <a class="nav-link " href="viewCart.php">Cart</a>
           </li>
         </ul>
       </div>

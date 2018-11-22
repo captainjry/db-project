@@ -9,16 +9,15 @@
     <div class="main-content">
       <div class="container">
       <?php
-          require('connect.php');
+          include 'connect.php';
           $q = "select * from book";
           $result = $mysqli->query($q);
           if(!$result) {
             echo "Select failed: ".$mysqli->error;
-          }
+          }       
           $books = array();
           while($book = $result->fetch_assoc()) {
             $books[] = $book;
- 
           }
           $page = $_SERVER['QUERY_STRING'] ? $_GET['page'] : 1;
           $bookPerPage = 12;
@@ -36,7 +35,7 @@
                     <ul class="actionlist">
                       <li>                    
                         <a href="book.php?id='.$book['ISBN'].'">Read more</a>
-                        <a href="cart.php">Buy</a>
+                        <a href="cartAction.php?action=addToCart&id='.$book['ISBN'].'">Buy</a>
                       </li>
                     </ul>
                   </div>
