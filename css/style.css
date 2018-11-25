@@ -19,9 +19,11 @@ li.nav-item a.nav-link {
   width: 25%;
   height: 25%;
 }
-.logoBig{
-  margin:2% auto auto auto;
+
+.logoBig {
+  margin: 2% auto auto auto;
 }
+
 .note {
   text-align: right;
 }
@@ -60,8 +62,14 @@ li.nav-item a.nav-link {
   padding: 6px;
   border: none;
   margin-top: 8px;
-  margin-right: 50px;
+  margin-right: 20px;
   font-size: 17px;
+}
+
+.topnav button {
+  float: right;
+  margin-top: 10px;
+  margin-right: 30px;
 }
 
 .main-content {
@@ -153,16 +161,19 @@ footer h5 {
   max-width: 100%;
   max-height: 100%;
 }
-.center{
+
+.center {
   margin: auto;
 }
-.creditlogo{
+
+.creditlogo {
   margin-bottom: 8%;
 }
+
 .boxes {
   background: #fff;
   border-radius: 10px;
   box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
-  margin-top:3%; 
-  padding:15px;
+  margin-top: 3%;
+  padding: 15px;
 }

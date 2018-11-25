@@ -1,7 +1,7 @@
 <?php 
-  include 'header.php';
   include 'cart.php';
   $cart = new Cart;
+  include 'header.php';
 ?>
   <script>
     function updateCartItem(obj,id){
@@ -32,18 +32,9 @@
                 <th scope="col">Price</th>
                 <th scope="col" class="text-center">Quantity</th>
                 <th scope="col" class="text-right">Subtotal</th>
-                <th> </th>
+                <th>&nbsp;</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td><img src="img/1.jpg" style="height: 50px;" /> </td>
-                <td>Culture Japan</td>
-                <td>In stock</td>
-                <td><input class="form-control" type="text" value="1" /></td>
-                <td class="text-right">258 Baht</td>
-                <td class="text-right"><button class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
-              </tr>
               <?php
             if($cart->total_items() > 0){
                 //get cart items from session
@@ -55,7 +46,7 @@
                 <td><?php echo $item["name"]; ?></td>
                 <td><?php echo $item["price"].'.-'; ?></td>
                 <td><input type="number" class="form-control text-center" value="<?php echo $item["qty"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-                <td class="text-right"><?php echo '$'.$item["subtotal"].' .-'; ?></td>
+                <td class="text-right"><?php echo $item["subtotal"].' .-'; ?></td>
                 <td>
                     <a href="cartAction.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
                 </td>
@@ -64,6 +55,14 @@
             <tr><td colspan="5"><p>Your cart is empty.....</p></td>
             <?php } ?>
             </tbody>
+            <tfoot>
+        <tr>
+            <td colspan="2"></td>
+            <?php if($cart->total_items() > 0){ ?>
+            <td class="text-center"><strong>Total <?php echo ''.$cart->total().' .-'; ?></strong></td>
+            <?php } ?>
+        </tr>
+    </tfoot>
           </table>
         </div>
       </div>
