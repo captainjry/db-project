@@ -1,11 +1,9 @@
 <?php
   session_start();  
-?>
-<?php
   include 'connect.php';
   include 'header.php';
 if(isset($_POST['submit'])){
-    header('dbproject_php/index.php');
+    // header('dbproject_php/index.php');
     $username =$_POST['username'];
     $password =$_POST['password'];
     if(empty($username) || empty($password)){
@@ -23,24 +21,27 @@ if(isset($_POST['submit'])){
         }
         else{
             if($row = mysqli_fetch_assoc($result)){
-                $hashedPwdCheck = password_verify($hashedPwd,$row['customer_password']);
-                if($hashedPwdCheck == false){
+                $hashedPwd = $password;
+                if(strcmp($hashedPwd,$row['customer_password']) != 0 ){
                     echo '<script language="javascript">';
                     echo 'alert("Login Error!")';
                     echo '</script>';
                 }
-                else if($hashedPwdCheck==true){
+                else {
+                    echo '<script language="javascript">';
+                    echo 'alert("Login Successful!")';
+                    echo '</script>';
                     $_SESSION['c_username']=$row['customer_username'];
                     $_SESSION['c_password']=$row['customer_password'];
                     $_SESSION['c_customerid']=$row['customer_id'];
                     $_SESSION['c_email']=$row['customer_email'];
                     $_SESSION['c_fname']=$row['customer_fname'];
                     $_SESSION['c_lname']=$row['customer_lname'];
-                    echo '<script language="javascript">';
-                    echo 'alert("Login Successful!")';
-                    echo '</script>';
-                } 
-            else{
+                    echo '<script> location.replace("index.php"); </script>';
+
+                }
+            } 
+            else {
                 echo '<script language="javascript">';
                 echo 'alert("Login Error!")';
                 echo '</script>';
@@ -48,8 +49,7 @@ if(isset($_POST['submit'])){
             
         }
     }
+
 }
-?>
- <?php
     include 'footer.php';
-  ?>
+?>

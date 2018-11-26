@@ -28,7 +28,7 @@
                 </p>
               </div>
               <h1>'.$book['price'].'.-</h1>
-              <button type="button" class="btn btn-dark cartbtn">Add to cart</button>
+              <a href="cartAction.php?action=addToCart&id='.$book['ISBN'].'" role="button" class="btn btn-dark cartbtn">Add to cart</a>
             </div>
           </div>
         </div>

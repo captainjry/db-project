@@ -58,7 +58,7 @@ if(isset($_POST['submit'])){
           echo '</script>';
         }
         else{
-            $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
+            $hashedPwd = $password;
             mysqli_stmt_bind_param($stmt,"sss",$username,$hashedPwd,$email);
             mysqli_stmt_execute($stmt);
             echo '<script language="javascript">';

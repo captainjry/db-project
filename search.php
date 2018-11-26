@@ -1,5 +1,6 @@
 <?php
-  include 'header.php';
+  include 'header.php'; 
+  include 'connect.php';
 ?>
   <div class="bg">
     <div class="topic">
@@ -11,7 +12,6 @@
       <?php
       if(isset($_POST['searchb']))
       {
-        include 'connect.php';
           $search = mysqli_real_escape_string($mysqli,$_POST['search']);
           $searchup=strtoupper($search);
           $q = "select * from book where title LIKE '%$searchup%'or author_name LIKE '%$searchup%'";

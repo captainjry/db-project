@@ -25,14 +25,16 @@
       <div class="collapse navbar-collapse justify-content-end" id="navbarsExample08">
         <ul class="navbar-nav">
         <?php
-          session_start();
           if (isset($_SESSION['c_username'])){
-          echo '<form action="logout.php" method="POST">
+          echo '
                   <li class="nav-item">
-                    <a class="nav-link">Log out</a>
+                    <a href="logout.php" class="nav-link">Log out</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="profile.php">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link " href="viewCart.php">Cart</a>
                   </li>
                 </form>';
           }else{
@@ -56,7 +58,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form  action="login.php" method="POST">
                     <div class="form-group">
                       <label for="exampleInputEmail1">Username</label>
                       <input type="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -74,18 +76,16 @@
                       <small id="emailHelp" class="form-text text-muted note">if you didn't sign up click here <a href="signup.php">Sign
                           up</a></small>
                     </div>
+                    <div class="modal-footer justify-content-center">
+                      <button type="submit" name="submit" class="btn btn-primary">Login</button>
+                    </div>
+                    </form>
                 </div>
                 <div class="modal-footer justify-content-center">
-                <form action="login.php" method="POST">
-                  <button type="button" name="submit" class="btn btn-primary">Login</button>
-                </form>
                 </div>
               </div>
             </div>
           </div>
-          <li class="nav-item">
-            <a class="nav-link " href="viewCart.php">Cart</a>
-          </li>
         </ul>
       </div>
     </nav>
