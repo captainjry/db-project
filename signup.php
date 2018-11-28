@@ -64,6 +64,8 @@ if(isset($_POST['submit'])){
             echo '<script language="javascript">';
             echo 'alert("Sign Up Successfully")';
             echo '</script>';
+            echo '<script> location.replace("index.php"); </script>';
+
             
           }
         

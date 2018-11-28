@@ -3,27 +3,30 @@
   include 'header.php';
 if(isset($_POST['submit']))
 {
-	$name =$_POST['name'];
+	$username =$_POST['username'];
+	$password =$_POST['password'];
 	$email =$_POST['email'];
-	$info =$_POST['info'];
-  if (empty($name)||empty($email)||empty($info))
+  if (empty($username)||empty($password)||empty($email))
   {
+    echo '<script language="javascript">';
+    echo 'alert("Please fill in your information correctly!")';
+    echo '</script>';
   }
   else{
     if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 ;
 
     }else{
-        $sql="SELECT * FROM contact WHERE contact_name='$name' ";
+        $sql="SELECT * FROM staff WHERE staff_username='$username' ";
         $result = mysqli_query($mysqli, $sql);
         $resultCheck = mysqli_num_rows($result);
       }
         if($resultCheck>0){
-          $sql="INSERT INTO contact (contact_name, contact_email , contact_info) VALUES('$name','$email','$info')";  
-          mysqli_query($mysqli, $sql);
+          
 
         } else{
-        $sql="INSERT INTO contact (contact_name, contact_email , contact_info) VALUES('$name','$email','$info')";  
+        $hashedPwd=password_hash($password, PASSWORD_DEFAULT);
+        $sql="INSERT INTO staff (staff_username, staff_password , staff_email) VALUES('$username','$password','$email')";  
         mysqli_query($mysqli, $sql);
 
         }
@@ -36,23 +39,23 @@ if(isset($_POST['submit']))
       <div class="row">
         <div class="col-md-4">
           <div class="topic">
-            <h2 class="text-center">Contact</h2>
+            <h2 class="text-center">Staff signup</h2>
           </div>
-          <form class="login-form" method="POST" action="contact.php">
+          <form class="login-form" method="POST" action="signup.php">
             <div class="form-group">
-              <label for="exampleInputEmail1" class="text-uppercase">Name</label>
-              <input type="text" class="form-control" name="name" placeholder="">
+              <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">Password</label>
+              <input type="password" class="form-control" name="password" placeholder="">
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1" class="text-uppercase">Email</label>
               <input type="text" class="form-control" name="email" placeholder="">
             </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1" class="text-uppercase">Problem/Advice</label>
-              <textarea type="text" class="form-control" rows="3"name="info" placeholder=""></textarea>
-            </div>
             <div class="form-check">
-              <button type="submit" class="btn btn-success float-right" name="submit">Send</button>
+              <button type="submit" class="btn btn-success float-right" name="submit">Sign Up</button>
             </div>
           </form>
         </div>

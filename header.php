@@ -36,6 +36,21 @@
                   <li class="nav-item">
                     <a class="nav-link " href="viewCart.php">Cart</a>
                   </li>
+                  <li class="nav-item style="">
+                    <span style="color:white;line-height:5px;font-weight:bold;">Welcome : '.$_SESSION["c_username"].' </span>
+                  </li>
+                </form>';
+          }else if(isset($_SESSION['s_username'])){
+            echo '
+                  <li class="nav-item">
+                    <a href="logout.php" class="nav-link">Log out</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="profile.php">Profile</a>
+                  </li>
+                  <li class="nav-item">
+                    <strong style="color:white;">Staff :'.$_SESSION["s_username"].' </strong>
+                  </li>
                 </form>';
           }else{
             echo '<li class="nav-item">
@@ -89,15 +104,35 @@
         </ul>
       </div>
     </nav>
-    <div class="second-bar">
-      <div class="topnav">
-        <a class="active" href="#home">Home</a> <a href="#about">About</a>
-        <a href="#">Promotion</a>
-        <a href="#contact">Author</a> <a href="#contact">Contact</a>
-        <form action="search.php" method="POST">
-          <button type="submit" name="searchb"><i class="fas fa-search"></i></button>
-          <input type="text" name="search" placeholder="Search.." />
-        </form>
-      </div>
-    </div>
+    <?php
+          if(isset($_SESSION['s_username'])){
+            echo '<div class="second-bar">
+                    <div class="topnav">
+                      <a class="active" href="#home">Home</a> 
+                      <a href="#about">About</a>
+                      <a href="#">Promotion</a>
+                      <a href="contact.php">Contact</a>
+                      <a href="staff_addbook.php">Book Management</a>
+                      <a href="staff_deluser.php">User Management</a>
+                      <form action="search.php" method="POST">
+                        <button type="submit" name="searchb"><i class="fas fa-search"></i></button>
+                        <input type="text" name="search" placeholder="Search.." />
+                      </form>
+                    </div>
+                  </div>';
+          }else{
+            echo '<div class="second-bar">
+                    <div class="topnav">
+                      <a class="active" href="index.php">Home</a> 
+                      <a href="#about">About</a>
+                      <a href="promothon.php">Promotion</a>
+                      <a href="contact.php">Contact</a>
+                      <form action="search.php" method="POST">
+                        <button type="submit" name="searchb"><i class="fas fa-search"></i></button>
+                        <input type="text" name="search" placeholder="Search.." />
+                      </form>
+                    </div>
+                  </div>';
+          }
+          ?>
   </div>
