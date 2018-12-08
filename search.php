@@ -34,7 +34,7 @@
               if($index % 3 == 0) {
                 echo("<div class='row'>");
               }
-              echo('
+              if (isset($_SESSION['c_username'])){echo('
                 <div class="col-sm">
                   <img src="'.$book['img_url'].'"/>
                   <div class="meta">
@@ -45,7 +45,20 @@
                       </li>
                     </ul>
                   </div>
+                </div>');}
+              else{
+                echo('
+                <div class="col-sm">
+                  <img src="'.$book['img_url'].'"/>
+                  <div class="meta">
+                    <ul class="actionlist">
+                      <li>                    
+                        <a href="book.php?id='.$book['ISBN'].'">Read more</a>
+                      </li>
+                    </ul>
+                  </div>
                 </div>');
+              }
               if($index % 3 == 2) {
                 echo("</div>");
               }

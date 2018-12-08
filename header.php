@@ -37,7 +37,7 @@
                     <a class="nav-link " href="viewCart.php">Cart</a>
                   </li>
                   <li class="nav-item style="">
-                    <span style="color:white;line-height:5px;font-weight:bold;">Welcome : '.$_SESSION["c_username"].' </span>
+                    <p style="color:white;font-weight:bold;position:relative;top:7.5px;padding-left:3px;">Welcome : '.$_SESSION["c_username"].' </p>
                   </li>
                 </form>';
           }else if(isset($_SESSION['s_username'])){
@@ -49,7 +49,7 @@
                     <a class="nav-link" href="profile.php">Profile</a>
                   </li>
                   <li class="nav-item">
-                    <strong style="color:white;">Staff :'.$_SESSION["s_username"].' </strong>
+                    <strong style="color:white;position:relative;top:7.5px;padding-left:3px;">Staff :'.$_SESSION["s_username"].' </strong>
                   </li>
                 </form>';
           }else{
@@ -110,7 +110,7 @@
                     <div class="topnav">
                       <a class="active" href="#home">Home</a> 
                       <a href="#about">About</a>
-                      <a href="#">Promotion</a>
+                      <a href="promotion.php">Promotion</a>
                       <a href="contact.php">Contact</a>
                       <a href="staff_addbook.php">Book Management</a>
                       <a href="staff_deluser.php">User Management</a>
@@ -125,7 +125,7 @@
                     <div class="topnav">
                       <a class="active" href="index.php">Home</a> 
                       <a href="#about">About</a>
-                      <a href="promothon.php">Promotion</a>
+                      <a href="promotion.php">Promotion</a>
                       <a href="contact.php">Contact</a>
                       <form action="search.php" method="POST">
                         <button type="submit" name="searchb"><i class="fas fa-search"></i></button>

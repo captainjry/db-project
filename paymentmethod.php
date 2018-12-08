@@ -98,33 +98,50 @@ $_SESSION['sessCustomerID'] = $_SESSION['c_customerid'];
             <h3 class="headingTop text-center">Select Your Payment Method</h3>
           </div>
           <div class="paymentWrap">
-            <div class="btn-group paymentBtnGroup btn-group-justified" data-toggle="buttons">
-              <label class="btn paymentMethod active">
+            <div class="btn-group paymentBtnGroup btn-group-justified" >
+
+             
+            <form method="post" >
+              <label class="btn paymentMethod ">
                 <div class="method cash"></div>
-                <input type="radio" name="options" value="Cash" id="pcash">
+                <input type="radio" name="method" value="Cash" checked>
               </label>
               <label class="btn paymentMethod">
                 <div class="method master-card"></div>
-                <input type="radio" name="options" value="Mastercard" id="mastercard">
+                <input type="radio" name="method" value="Mastercard" >
               </label>
               <label class="btn paymentMethod">
                 <div class="method visa"></div>
-                <input type="radio" name="options" value="Visa" id="pvisa">
+                <input type="radio" name="method" value="Visa">
               </label>
               <label class="btn paymentMethod">
                 <div class="method paypal"></div>
-                <input type="radio" name="options" value="Paypal" id="ppaypal">
+                <input type="radio" name="method" value="Paypal">
               </label>
               <label class="btn paymentMethod">
                 <div class="method skrill"></div>
-                <input type="radio" name="options" value="Skrill" id="pskrill">
-              </label>                            
-            </div>
+                <input type="radio" name="method" value="Skrill">
+              </label>
+              <input type="submit"  name="submit" class="btn btn-info">
+              </form>
+ 
+              </div>
+           
+          <?php
+          if(isset($_POST['submit'])){
+            $mthod=$_POST['method'];
+            $query="INSERT INTO customer (`customer_cardno`) VALUES ('".$mthod."')";
+            $result=$mysqli->query($query);
+            if(!$result){
+            echo "INSERT failed. Error: ".$mysqli->error ;}
+            
+          }
+          
+          ?>
           </div>
           <div class="footerNavWrap clearfix">
             <a role="button" href="index.php" class="btn btn-secondary left">Continue Shopping</a>
-            <input id="SubmitButton" type="submit" value="Checkout" class="btn btn-info right" style="margin-left:30px;">
-            <a role="button" href="cartAction.php?action=placeOrder" class="btn btn-success right orderBtn">Place Order</a>
+            <a role="button" href="cartAction.php?action=placeOrder" class="btn btn-success right orderBtn" >Place Order</a>
           </div>          
         </div>
       </div>
