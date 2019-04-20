@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 22, 2018 at 01:46 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.11
+-- Generation Time: Apr 20, 2019 at 07:27 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `bookstore`
 --
-CREATE DATABASE IF NOT EXISTS `bookstore` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `bookstore`;
 
 -- --------------------------------------------------------
 
@@ -67,8 +65,6 @@ CREATE TABLE `book` (
 --
 
 INSERT INTO `book` (`ISBN`, `author_name`, `publisher_name`, `book_info`, `title`, `year`, `price`, `img_url`) VALUES
-(1, 'โตมร ศุขปรีชา\r\n\r\n', 'สำนักพิมพ์แซลมอน\r\n', 'สารคดีกึ่งนิยายของ ‘โตมร ศุขปรีชา’ ว่าด้วยการเดินทางเพื่อเข้าถึงจิตวิญญาณภายในและวิธีคิดของคนญี่ปุ่น ผ่านการเก็บข้อมูลจากคำบอกเล่าของบุคคล บันทึกประวัติศาสตร์ และศิลปะวัฒนธรรม\r\n', 'ย่องเบาเข้าญี่ปุ่น', 2008, 285, 'img/1.jpg'),
-(2, 'ธนชาติ ศิริภัทราชัย\r\n', 'สำนักพิมพ์แซลมอน', '‘NEW YORK 1st TIME นิวยอร์กตอนแรกๆ...’ หนังสือเล่มแรกของ เบ๊น—ธนชาติ ศิริภัทราชัย ผู้ช่วยผู้กำกับภาพยนตร์เรื่อง ลุงบุญมีระลึกชาติ ที่จับเครื่องบินไปเรียนถ่ายภาพในนครนิวยอร์ก และแคปเจอร์เหตุการณ์ครั้งแรกในชีวิตมาร่วมแชร์ อย่างเหตุการณ์โดนปล้นครั้งแรก มีแฟนเป็นชาวต่างชาติครั้งแรก และความอดทนแปลกๆ กับครั้งแรกที่ต้องยืนต่อแถวนานกว่าแปดชั่วโมง\r\n\r\n', 'NEW YORK 1ST TIME นิวยอร์กตอนแรกๆ...\r\n', 2008, 243, 'img/2.png'),
 (3, 'ธนชาติ ศิริภัทราชัย', 'สำนักพิมพ์แซลมอน', 'เมื่อนิวยอร์กร้อนเป็นไฟ ธนชาติ ศิริภัทราชัย จึงจับเครื่องบินมุ่งตรงสู่อลาสก้า ดินแดนที่ขึ้นชื่อว่าหนาวสุดขีด (แต่ดันไปตอนฤดูร้อน...) เพื่อไปพักชมวิวที่ไม่มีทางพบเห็นในเมืองหลวง ทั้งเดินเข้าป่าที่ทรหด ล่องเรือไปเพลินวาฬ พูดคุยกับ ‘กลุ่มคน’ ที่ต่างก็มีเหตุผลว่าทำไมอลาสก้าถึงน่าอยู่และทำไมเมืองนี้ถึงมา ‘ครั้งเดียว’ แล้วไม่เคยพอ', 'THE REAL ALASKA อลาสก้าล้านเปอร์เซ็นต์', 2008, 243, 'img/3.png'),
 (4, 'ธนชาติ ศิริภัทราชัย', 'สำนักพิมพ์แซลมอน', 'รวมสารพัดเรื่องเล่า ‘ครั้งแรกในเมืองไทย’ ของ \'ลุงเนลสัน’ ผ่านบทสัมภาษณ์สุดเซอร์เรียลของ ‘ธนชาติ ศิริภัทราชัย\' นักเขียนหน้านิ่งที่จะมาระดมยิงคำถามแทนชาวไทยทุกคน', 'TALK WITH MISTER NELSON', 2015, 180, 'img/4.png'),
 (5, 'โชติกา ปริณายก', 'สำนักพิมพ์แซลมอน', 'จากผู้คนที่พบเจอระหว่างเดินทาง สู่การเสริมแต่งโดยจินตนาการของ \'โชติกา ปริณายก\' ครีเอทีฟสาวผู้นำภาพถ่ายจากปารีสมาร้อยเรียงเป็นเรื่องราวของผู้คนที่ไม่มีอยู่จริง ทั้งตัวละครของหญิงสาวนักโจรกรรม, ชายหนุ่มเจ้าของร้านเคบับ, คู่รักแปลกหน้าที่ไม่อยากลงลึกในความสัมพันธ์, หญิงสาวปริศนาผู้ยืนอยู่ด้านหน้าของตึกแลนด์มาร์ก ไปจนถึงชายผู้ออกเดินทางจากดาวดวงนี้เพื่อไปพบปารีสบนดาวดวงอื่น', 'PARIS IN PAIRS ปารีสบนดาวดวงอื่น', 2018, 195, 'img/5.jpg'),
@@ -124,7 +120,7 @@ CREATE TABLE `cart` (
 CREATE TABLE `customer` (
   `customer_id` int(100) NOT NULL,
   `customer_username` varchar(255) NOT NULL,
-  `customer_password` int(250) NOT NULL,
+  `customer_password` varchar(250) NOT NULL,
   `customer_fname` varchar(200) NOT NULL,
   `customer_lname` varchar(200) NOT NULL,
   `customer_email` varchar(255) NOT NULL,
@@ -139,38 +135,45 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`customer_id`, `customer_username`, `customer_password`, `customer_fname`, `customer_lname`, `customer_email`, `customer_address`, `customer_phone`, `customer_cardno`, `status`) VALUES
-(1, 'parking246', 123456, 'John', 'Cena', '', 'Dcondo Rangsit', 90456, '352-789-4523', 'User');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customers`
---
-
-CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `address` text COLLATE utf8_unicode_ci NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order`
---
-
-CREATE TABLE `order` (
-  `order_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `order_date` datetime(6) NOT NULL,
-  `order_status` set('yes','no') NOT NULL,
-  `quantity` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+(4, 'captains9977', 'ta2tkwra', '', '', 'captains9977@gmail.com', '', 0, '', ''),
+(5, 'fjord', 'fkord', 'harito', 'des', 'fkord5678@hotmai.com', 'dasdasd', 800589358, '', ''),
+(6, 'parknahee', 'nahee', 'chanwut', 'kaksud', 'noobshit@hotmail.com', '99/118,Ratchaphruek-Phram5 Rd,, Bang rak noi Sub-district,MuengNonthaburi district', 88888, '', ''),
+(7, '0', 'waow', 'peter', 'parker', 'insane@windowslive.com', '99/118,Ratchaphruek-Phram5 Rd,, Bang rak noi Sub-district,MuengNonthaburi district', 911, '', ''),
+(8, 'zepalz', 'zepalz', '', '', 'zepalz@hotmail.com', '', 0, '', ''),
+(9, 'xD', 'rofl', '', '', 'lmao@gmail.com', '', 0, '', ''),
+(10, 'gaben', 'gaben', '', '', 'gabenclap@gg.com', '', 0, '', ''),
+(12, '', '', '', '', '', '', 0, '', ''),
+(13, '', '', '', '', '', '', 0, '', ''),
+(14, '', '', '', '', '', '', 0, '', ''),
+(15, '', '', '', '', '', '', 0, '', ''),
+(16, '', '', '', '', '', '', 0, '', ''),
+(17, '', '', '', '', '', '', 0, '', ''),
+(18, '123', '123', '', '', '123@gmail.com', '', 0, '', ''),
+(19, '', '', '', '', '', '', 0, '', ''),
+(20, '', '', '', '', '', '', 0, '', ''),
+(21, '', '', '', '', '', '', 0, '', ''),
+(22, '', '', '', '', '', '', 0, '', ''),
+(23, '', '', '', '', '', '', 0, '', ''),
+(24, '', '', '', '', '', '', 0, '', ''),
+(25, '', '', '', '', '', '', 0, 'Visa', ''),
+(26, '', '', '', '', '', '', 0, 'Visa', ''),
+(27, '', '', '', '', '', '', 0, 'Visa', ''),
+(28, '', '', '', '', '', '', 0, 'Paypal', ''),
+(29, '', '', '', '', '', '', 0, 'Paypal', ''),
+(30, '', '', '', '', '', '', 0, 'Paypal', ''),
+(31, '', '', '', '', '', '', 0, 'Visa', ''),
+(32, '', '', '', '', '', '', 0, 'Visa', ''),
+(33, '', '', '', '', '', '', 0, 'Visa', ''),
+(34, '', '', '', '', '', '', 0, 'Visa', ''),
+(35, '', '', '', '', '', '', 0, 'Skrill', ''),
+(36, '', '', '', '', '', '', 0, 'Skrill', ''),
+(37, '', '', '', '', '', '', 0, 'Skrill', ''),
+(38, '', '', '', '', '', '', 0, 'Paypal', ''),
+(39, '', '', '', '', '', '', 0, 'Skrill', ''),
+(40, '', '', '', '', '', '', 0, 'Skrill', ''),
+(41, 'pipipi', 'yoon', '', '', 'yoon@hotmail.com', 'uyAS', 0, '', ''),
+(42, '', '', '', '', '', '', 0, 'Skrill', ''),
+(43, 'newnew', '1234', '', '', 'new@gmail.com', '', 0, '', '');
 
 -- --------------------------------------------------------
 
@@ -187,6 +190,26 @@ CREATE TABLE `orders` (
   `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `customer_id`, `total_price`, `created`, `modified`, `status`) VALUES
+(43, 5, 486.00, '2018-11-28 17:53:27', '2018-11-28 17:53:27', '1'),
+(44, 5, 285.00, '2018-11-28 17:57:54', '2018-11-28 17:57:54', '1'),
+(45, 5, 375.00, '2018-11-28 22:05:17', '2018-11-28 22:05:17', '1'),
+(46, 5, 180.00, '2018-11-29 07:14:37', '2018-11-29 07:14:37', '1'),
+(47, 5, 375.00, '2018-11-29 07:26:42', '2018-11-29 07:26:42', '1'),
+(48, 5, 180.00, '2018-11-29 08:21:54', '2018-11-29 08:21:54', '1'),
+(49, 5, 666.00, '2018-11-29 08:31:57', '2018-11-29 08:31:57', '1'),
+(50, 18, 180.00, '2018-11-29 08:48:58', '2018-11-29 08:48:58', '1'),
+(51, 18, 195.00, '2018-11-29 08:50:18', '2018-11-29 08:50:18', '1'),
+(52, 18, 180.00, '2018-11-29 08:51:36', '2018-11-29 08:51:36', '1'),
+(53, 5, 180.00, '2018-11-29 09:27:07', '2018-11-29 09:27:07', '1'),
+(54, 5, 243.00, '2018-11-29 09:27:26', '2018-11-29 09:27:26', '1'),
+(55, 41, 618.00, '2019-04-03 20:04:10', '2019-04-03 20:04:10', '1'),
+(56, 41, 180.00, '2019-04-03 20:04:58', '2019-04-03 20:04:58', '1');
+
 -- --------------------------------------------------------
 
 --
@@ -196,23 +219,34 @@ CREATE TABLE `orders` (
 CREATE TABLE `order_items` (
   `id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
+  `ISBN` int(11) NOT NULL,
   `quantity` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- --------------------------------------------------------
-
 --
--- Table structure for table `payment`
+-- Dumping data for table `order_items`
 --
 
-CREATE TABLE `payment` (
-  `payment_id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `amount` int(11) NOT NULL,
-  `payment_date` datetime(6) DEFAULT NULL,
-  `payment_confirm` set('yes','no') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO `order_items` (`id`, `order_id`, `ISBN`, `quantity`) VALUES
+(21, 43, 3, 2),
+(22, 44, 1, 1),
+(23, 45, 5, 1),
+(24, 45, 4, 1),
+(25, 46, 10, 1),
+(26, 47, 5, 1),
+(27, 47, 4, 1),
+(28, 48, 4, 1),
+(29, 49, 10, 1),
+(30, 49, 3, 2),
+(31, 50, 4, 1),
+(32, 51, 5, 1),
+(33, 52, 4, 1),
+(34, 53, 4, 1),
+(35, 54, 3, 1),
+(36, 55, 4, 1),
+(37, 55, 3, 1),
+(38, 55, 5, 1),
+(39, 56, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -313,6 +347,13 @@ CREATE TABLE `staff` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`staff_id`, `staff_Fname`, `staff_Lname`, `staff_address`, `staff_username`, `staff_password`, `staff_email`, `staff_phone`) VALUES
+(1, 'Harito', 'Kirito', '622 Old Fulton Drive \r\nEast Lansing, MI 48823', 'Haritodes', 'des', 'haritoclap@hotmail.com', '911191');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -341,18 +382,6 @@ ALTER TABLE `customer`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `customers`
---
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `order`
---
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`order_id`,`customer_id`);
-
---
 -- Indexes for table `orders`
 --
 ALTER TABLE `orders`
@@ -365,12 +394,6 @@ ALTER TABLE `orders`
 ALTER TABLE `order_items`
   ADD PRIMARY KEY (`id`),
   ADD KEY `order_id` (`order_id`);
-
---
--- Indexes for table `payment`
---
-ALTER TABLE `payment`
-  ADD PRIMARY KEY (`payment_id`,`customer_id`);
 
 --
 -- Indexes for table `payment_method`
@@ -428,37 +451,19 @@ ALTER TABLE `cart`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `customer_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `customers`
---
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `order`
---
-ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `customer_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `payment`
---
-ALTER TABLE `payment`
-  MODIFY `payment_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `payment_method`
@@ -488,7 +493,7 @@ ALTER TABLE `publisher`
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Constraints for dumped tables
@@ -498,765 +503,13 @@ ALTER TABLE `staff`
 -- Constraints for table `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`customer_id`);
 
 --
 -- Constraints for table `order_items`
 --
 ALTER TABLE `order_items`
   ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
---
--- Database: `codexworld`
---
-CREATE DATABASE IF NOT EXISTS `codexworld` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `codexworld`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `customers`
---
-
-CREATE TABLE `customers` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `phone` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `address` text COLLATE utf8_unicode_ci NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
-  `customer_id` int(11) NOT NULL,
-  `total_price` float(10,2) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `order_items`
---
-
-CREATE TABLE `order_items` (
-  `id` int(11) NOT NULL,
-  `order_id` int(11) NOT NULL,
-  `product_id` int(11) NOT NULL,
-  `quantity` int(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `products`
---
-
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL,
-  `name` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
-  `price` float(10,2) NOT NULL,
-  `created` datetime NOT NULL,
-  `modified` datetime NOT NULL,
-  `status` enum('1','0') COLLATE utf8_unicode_ci NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- Dumping data for table `products`
---
-
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `created`, `modified`, `status`) VALUES
-(1, 'kuy', 'dfsgnsldkfnhls/dnfkg;/ndsf/ngsdfng./dsnmfg./sdmf.msdf.gms/dfmg./sdmf./smdfmqwert', 150.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1'),
-(2, 'heer', 'dfsgnsldkfnhls/dnfkg;/ndsf/ngsdfng./dsnmfg./sdmf.msdf.gms/dfmg./sdmf./smdfmqwert', 200.00, '0000-00-00 00:00:00', '0000-00-00 00:00:00', '1');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `customers`
---
-ALTER TABLE `customers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `customer_id` (`customer_id`);
-
---
--- Indexes for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `order_id` (`order_id`);
-
---
--- Indexes for table `products`
---
-ALTER TABLE `products`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `customers`
---
-ALTER TABLE `customers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `order_items`
---
-ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `products`
---
-ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `orders`
---
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Constraints for table `order_items`
---
-ALTER TABLE `order_items`
-  ADD CONSTRAINT `order_items_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
---
--- Database: `phpmyadmin`
---
-CREATE DATABASE IF NOT EXISTS `phpmyadmin` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
-USE `phpmyadmin`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__bookmark`
---
-
-CREATE TABLE `pma__bookmark` (
-  `id` int(11) NOT NULL,
-  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `query` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__central_columns`
---
-
-CREATE TABLE `pma__central_columns` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_length` text COLLATE utf8_bin,
-  `col_collation` varchar(64) COLLATE utf8_bin NOT NULL,
-  `col_isNull` tinyint(1) NOT NULL,
-  `col_extra` varchar(255) COLLATE utf8_bin DEFAULT '',
-  `col_default` text COLLATE utf8_bin
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Central list of columns';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__column_info`
---
-
-CREATE TABLE `pma__column_info` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `input_transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__designer_settings`
---
-
-CREATE TABLE `pma__designer_settings` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `settings_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Settings related to Designer';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__export_templates`
---
-
-CREATE TABLE `pma__export_templates` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `export_type` varchar(10) COLLATE utf8_bin NOT NULL,
-  `template_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `template_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved export templates';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__favorite`
---
-
-CREATE TABLE `pma__favorite` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Favorite tables';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__history`
---
-
-CREATE TABLE `pma__history` (
-  `id` bigint(20) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `sqlquery` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__navigationhiding`
---
-
-CREATE TABLE `pma__navigationhiding` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__pdf_pages`
---
-
-CREATE TABLE `pma__pdf_pages` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `page_nr` int(10) UNSIGNED NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__recent`
---
-
-CREATE TABLE `pma__recent` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
---
--- Dumping data for table `pma__recent`
---
-
-INSERT INTO `pma__recent` (`username`, `tables`) VALUES
-('root', '[{\"db\":\"bookstore\",\"table\":\"book\"},{\"db\":\"bookstore\",\"table\":\"cart\"},{\"db\":\"bookstore\",\"table\":\"products\"},{\"db\":\"bookstore\",\"table\":\"product\"},{\"db\":\"codexworld\",\"table\":\"customers\"},{\"db\":\"codexworld\",\"table\":\"orders\"},{\"db\":\"codexworld\",\"table\":\"order_items\"},{\"db\":\"codexworld\",\"table\":\"products\"},{\"db\":\"bookstore\",\"table\":\"customers\"},{\"db\":\"bookstore\",\"table\":\"orders\"}]');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__relation`
---
-
-CREATE TABLE `pma__relation` (
-  `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__savedsearches`
---
-
-CREATE TABLE `pma__savedsearches` (
-  `id` int(5) UNSIGNED NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_coords`
---
-
-CREATE TABLE `pma__table_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float UNSIGNED NOT NULL DEFAULT '0',
-  `y` float UNSIGNED NOT NULL DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_info`
---
-
-CREATE TABLE `pma__table_info` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__table_uiprefs`
---
-
-CREATE TABLE `pma__table_uiprefs` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `prefs` text COLLATE utf8_bin NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__tracking`
---
-
-CREATE TABLE `pma__tracking` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) UNSIGNED NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
-  `schema_sql` text COLLATE utf8_bin,
-  `data_sql` longtext COLLATE utf8_bin,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) UNSIGNED NOT NULL DEFAULT '1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__userconfig`
---
-
-CREATE TABLE `pma__userconfig` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `config_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
---
--- Dumping data for table `pma__userconfig`
---
-
-INSERT INTO `pma__userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2018-11-22 12:45:14', '{\"Console\\/Mode\":\"show\"}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__usergroups`
---
-
-CREATE TABLE `pma__usergroups` (
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tab` varchar(64) COLLATE utf8_bin NOT NULL,
-  `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma__users`
---
-
-CREATE TABLE `pma__users` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pma__central_columns`
---
-ALTER TABLE `pma__central_columns`
-  ADD PRIMARY KEY (`db_name`,`col_name`);
-
---
--- Indexes for table `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- Indexes for table `pma__designer_settings`
---
-ALTER TABLE `pma__designer_settings`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_user_type_template` (`username`,`export_type`,`template_name`);
-
---
--- Indexes for table `pma__favorite`
---
-ALTER TABLE `pma__favorite`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__history`
---
-ALTER TABLE `pma__history`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- Indexes for table `pma__navigationhiding`
---
-ALTER TABLE `pma__navigationhiding`
-  ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  ADD PRIMARY KEY (`page_nr`),
-  ADD KEY `db_name` (`db_name`);
-
---
--- Indexes for table `pma__recent`
---
-ALTER TABLE `pma__recent`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__relation`
---
-ALTER TABLE `pma__relation`
-  ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`),
-  ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- Indexes for table `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
-
---
--- Indexes for table `pma__table_coords`
---
-ALTER TABLE `pma__table_coords`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indexes for table `pma__table_info`
---
-ALTER TABLE `pma__table_info`
-  ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma__table_uiprefs`
---
-ALTER TABLE `pma__table_uiprefs`
-  ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma__tracking`
---
-ALTER TABLE `pma__tracking`
-  ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indexes for table `pma__userconfig`
---
-ALTER TABLE `pma__userconfig`
-  ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma__usergroups`
---
-ALTER TABLE `pma__usergroups`
-  ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- Indexes for table `pma__users`
---
-ALTER TABLE `pma__users`
-  ADD PRIMARY KEY (`username`,`usergroup`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `pma__bookmark`
---
-ALTER TABLE `pma__bookmark`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__column_info`
---
-ALTER TABLE `pma__column_info`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__export_templates`
---
-ALTER TABLE `pma__export_templates`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__history`
---
-ALTER TABLE `pma__history`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__pdf_pages`
---
-ALTER TABLE `pma__pdf_pages`
-  MODIFY `page_nr` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `pma__savedsearches`
---
-ALTER TABLE `pma__savedsearches`
-  MODIFY `id` int(5) UNSIGNED NOT NULL AUTO_INCREMENT;
---
--- Database: `staff`
---
-CREATE DATABASE IF NOT EXISTS `staff` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `staff`;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `gender`
---
-
-CREATE TABLE `gender` (
-  `GENDER_ID` int(11) NOT NULL,
-  `GENDER_NAME` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `gender`
---
-
-INSERT INTO `gender` (`GENDER_ID`, `GENDER_NAME`) VALUES
-(1, 'Male'),
-(2, 'Female'),
-(3, 'N/A');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `title`
---
-
-CREATE TABLE `title` (
-  `TITLE_ID` int(11) NOT NULL,
-  `TITLE_NAME` varchar(25) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `title`
---
-
-INSERT INTO `title` (`TITLE_ID`, `TITLE_NAME`) VALUES
-(1, 'Mr.'),
-(2, 'Mrs.'),
-(3, 'Ms.'),
-(4, 'Dr.'),
-(5, 'Prof.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user`
---
-
-CREATE TABLE `user` (
-  `USER_ID` int(11) NOT NULL,
-  `USER_TITLE` int(11) NOT NULL,
-  `USER_FNAME` varchar(50) NOT NULL,
-  `USER_LNAME` varchar(50) NOT NULL,
-  `USER_GENDER` int(11) NOT NULL,
-  `USER_EMAIL` varchar(50) NOT NULL,
-  `USER_NAME` varchar(25) NOT NULL,
-  `USER_PASSWD` varchar(25) NOT NULL,
-  `USER_GROUPID` int(11) NOT NULL,
-  `DISABLE` int(11) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`USER_ID`, `USER_TITLE`, `USER_FNAME`, `USER_LNAME`, `USER_GENDER`, `USER_EMAIL`, `USER_NAME`, `USER_PASSWD`, `USER_GROUPID`, `DISABLE`) VALUES
-(1, 1, 'John', 'Doe', 1, 'jd@mail.com', 'john_doe', '1111', 1, 0),
-(2, 2, 'Jane', 'Doe', 2, 'email', 'jane_doe', '2222', 2, 0),
-(3, 3, 'Jane', 'Smith', 2, 'email', 'jane_smith', '3333', 3, 0),
-(4, 1, 'John', 'Smith', 1, 'js@mail.com', 'john_smith', '4444', 3, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `usergroup`
---
-
-CREATE TABLE `usergroup` (
-  `USERGROUP_ID` int(11) NOT NULL,
-  `USERGROUP_CODE` varchar(50) DEFAULT NULL,
-  `USERGROUP_NAME` varchar(50) DEFAULT NULL,
-  `USERGROUP_REMARK` varchar(255) DEFAULT NULL,
-  `USERGROUP_URL` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `usergroup`
---
-
-INSERT INTO `usergroup` (`USERGROUP_ID`, `USERGROUP_CODE`, `USERGROUP_NAME`, `USERGROUP_REMARK`, `USERGROUP_URL`) VALUES
-(1, '1', 'Admin', 'Administrator', 'admin_view.php'),
-(2, '2', 'Staff', 'Staff', 'staff_view.php'),
-(3, '3', 'Member', ' Member', 'member_view.php');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `gender`
---
-ALTER TABLE `gender`
-  ADD PRIMARY KEY (`GENDER_ID`);
-
---
--- Indexes for table `title`
---
-ALTER TABLE `title`
-  ADD PRIMARY KEY (`TITLE_ID`);
-
---
--- Indexes for table `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`USER_ID`);
-
---
--- Indexes for table `usergroup`
---
-ALTER TABLE `usergroup`
-  ADD PRIMARY KEY (`USERGROUP_ID`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `gender`
---
-ALTER TABLE `gender`
-  MODIFY `GENDER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
--- AUTO_INCREMENT for table `title`
---
-ALTER TABLE `title`
-  MODIFY `TITLE_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `user`
---
-ALTER TABLE `user`
-  MODIFY `USER_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT for table `usergroup`
---
-ALTER TABLE `usergroup`
-  MODIFY `USERGROUP_ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
---
--- Database: `test`
---
-CREATE DATABASE IF NOT EXISTS `test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `test`;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
