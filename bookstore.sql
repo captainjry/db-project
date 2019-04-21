@@ -121,13 +121,13 @@ CREATE TABLE `customer` (
   `customer_id` int(100) NOT NULL,
   `customer_username` varchar(255) NOT NULL,
   `customer_password` varchar(250) NOT NULL,
-  `customer_fname` varchar(200) NOT NULL,
-  `customer_lname` varchar(200) NOT NULL,
+  `customer_fname` varchar(200) ,
+  `customer_lname` varchar(200) ,
   `customer_email` varchar(255) NOT NULL,
-  `customer_address` varchar(200) NOT NULL,
-  `customer_phone` int(11) NOT NULL,
-  `customer_cardno` varchar(50) NOT NULL,
-  `status` varchar(50) NOT NULL
+  `customer_address` varchar(200) ,
+  `customer_phone` int(11) ,
+  `customer_cardno` varchar(50) ,
+  `status` varchar(50) 
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
